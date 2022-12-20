@@ -153,21 +153,6 @@ impl Directory {
         dir_vec.push((self.name.clone(), dir_size));
         dir_size
     }
-    // fn total_size(&self) -> Vec<(String, usize)> {
-    //     let mut dir_size = 0usize;
-    //     let mut all_dirs = Vec::new();
-    //     if let Some(f) = &self.files {
-    //         dir_size += f.iter().map(|(_, v)| v.size).sum::<usize>();
-    //     }
-    //     if let Some(c) = &self.children {
-    //         for ds in c.iter().map(|(_, v)| v.borrow().total_size()) {
-    //             dir_size += ds.iter().map(|(_, s)| s).sum::<usize>();
-    //             all_dirs.extend_from_slice(&ds);
-    //         }
-    //     }
-    //     all_dirs.push((self.name.clone(), dir_size));
-    //     all_dirs
-    // }
 }
 
 fn parse_raw_output(input: &str) -> Result<Vec<OutputLine>> {
