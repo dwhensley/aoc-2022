@@ -267,12 +267,12 @@ fn main() {
     let needed_space = 30_000_000;
     let unused_space = total_space - root_size;
     let target = needed_space - unused_space;
-    let part_two_sum = dir_size_vec
+    let part_two_min = dir_size_vec
         .iter()
         .filter_map(|&(_, s)| ((s as isize - target as isize) > 0).then_some(s))
         .min()
         .unwrap();
-    println!("Part two: {part_two_sum}");
+    println!("Part two: {part_two_min}");
 }
 
 #[cfg(test)]
@@ -305,11 +305,11 @@ mod tests {
         let unused_space = total_space - root_size;
         let target = needed_space - unused_space;
 
-        let part_two_sum = dir_size_vec
+        let part_two_min = dir_size_vec
             .iter()
             .filter_map(|&(_, s)| ((s as isize - target as isize) > 0).then_some(s))
             .min()
             .unwrap();
-        assert_eq!(24_933_642, part_two_sum);
+        assert_eq!(24_933_642, part_two_min);
     }
 }
